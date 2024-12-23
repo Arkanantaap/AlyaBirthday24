@@ -35,10 +35,17 @@
         </div>
     </div>
 
-    <audio controls autoplay>
-        <source src="hbdmusik.m4a" type="audio/ogg">
-        Your browser does not support the audio element.
-      </audio>
+<audio id="myAudio" autoplay loop>
+  <source src="hbdmusik.m4a" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const audio = document.getElementById('myAudio');
+  audio.load();
+  audio.play();
+</script>
+
 
     <script src="script.js"></script>
 </body>
