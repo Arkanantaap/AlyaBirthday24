@@ -36,18 +36,21 @@
     </div>
 
 <audio id="myAudio" autoplay loop>
-  <source src="hbdmusik.m4a" type="audio/mpeg">
+  <source src="blue.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
   const audio = document.getElementById('myAudio');
-  audio.load();
-  audio.play();
+
+  function tryPlayAudio() {
+    audio.play().catch(() => {
+      setTimeout(tryPlayAudio, 1000);
+    });
+  }
+
+  tryPlayAudio();
 </script>
-
-
-    <script src="script.js"></script>
 </body>
 
 </html>
